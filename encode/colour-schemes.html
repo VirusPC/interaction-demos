@@ -96,13 +96,11 @@
     function renderPlot(colorScheme) {
       const years = getKeys("label").sort((a, b) => + a - b);
       const dataGroupByLabel = d3.group(data, d => d.label);
-      console.log(dataGroupByLabel);
       // 计算y轴最大值, 顺便排序, 顺便计算stack.
       const maxY = d3.max(dataGroupByLabel, d => {
                     d[1].sort((a, b) => {return universities.indexOf(b.color) - universities.indexOf(a.color)})
                     return d[1].reduce((acc, cur) => {cur.extentValue=[acc, acc + cur.value]; return acc + cur.value}, 0)
                   });
-      console.log(maxY)
       const scaleX = d3.scaleBand().domain(years).range([0, widthPlot]).paddingInner(0.1);
       const scaleY = d3.scaleLinear().domain([0, maxY]).range([heightPlot, 0]).nice();
       
