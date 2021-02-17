@@ -107,7 +107,7 @@
         .text(d => d.name));
 
     function radiusInputListener(value) {
-      groupMarks.selectAll("circle").attr("r", r)
+      groupMarks.selectAll("circle").attr("r", value)
     }
     function jitterInputListener(value) {
       jitterValue = value;
