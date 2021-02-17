@@ -1,0 +1,16 @@
+.example {
+  text-align: center;
+  display: inline-block;
+  width: 300px;
+  height: 230px;
+  margin: auto 10px;
+}
+
+.example-img {
+  width: 300px;
+  height: 185px;
+}
+
+.example-title {
+  font-size: medium;
+}
