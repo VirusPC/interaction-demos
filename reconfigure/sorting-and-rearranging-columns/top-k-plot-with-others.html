@@ -1,21 +1,28 @@
 <html>
 
 <head>
-
+    <meta charset="utf-8">
+    <title>Top-K Plot With Others</title>
 </head>
 
 <body>
-    
+    <h1>Top-K Plot With Others</h1>
     <a href="https://vega.github.io/vega/examples/top-k-plot-with-others/">source</a>
-    <div>
-        op
+    <br>
+    <br>
+    <br>
+
+    <div style="position: relative; left: 750px;">
+        k &nbsp; &nbsp;&nbsp;
         <select id="x-axis" onchange="changeOP(this)">
             <option value="average" selected>average</option>
             <option value="median">median</option>
             <option value="sum">sum</option>
         </select>
-        <text id="rangevalue">20</text>
+        <br>
+        op &nbsp;
         <input type="range" id="myRange" oninput="changeValue(this)">
+        <text id="rangevalue">20</text>
     </div>
     <svg style="display: inline;"></svg>
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -64,15 +71,15 @@
             render(topk(Data, k)[op].reverse(), op, k);
 
             var legend_panel = d3.select("#main_panel").append("g").attr("id", "legend_panel")
-                .attr("transform", "translate(" + (margin.left) + "," + (margin.top-15) + ")")
+                .attr("transform", "translate(" + (margin.left) + "," + (margin.top - 15) + ")")
                 .attr("width", margin.right)
                 .attr("height", height)
                 .append("text")
                 .text("Top Directors by Median Worldwide Gross")
-                .attr("font-size","1.2em")
+                .attr("font-size", "1.2em")
                 .attr("font-weight", "bold");
-                //Top Directors by Median Worldwide Gross
-            
+            //Top Directors by Median Worldwide Gross
+
 
         });
 
@@ -80,7 +87,7 @@
             set = new Set();
             dataArr = [];
             for (let i = 0; i < data.length; i++) {
-               // if(data[i].Director===null)continue;
+                // if(data[i].Director===null)continue;
                 set.add(data[i].Director);
             }
             topkArrObj = {
@@ -98,7 +105,7 @@
                     arr: []
                 }
                 for (let i = 0; i < data.length; i++) {
-                    if(data[i].name === null)continue;
+                    if (data[i].name === null) continue;
                     if (data[i].Director === item) {
                         ob.arr[ob.arr.length] = data[i]["Worldwide Gross"];
                     }
@@ -159,13 +166,13 @@
         function render(data, op, k) {
             //console.log(data);
             xScale.domain([0, d3.max(data, function (d) { return d.value; })]);
-            yScale.domain(data.map(function(d){return d.name}));
+            yScale.domain(data.map(function (d) { return d.name }));
             data_panel.selectAll(".changeAxis")
                 .data(data)
                 .enter().append("rect")
                 .attr('class', 'changeAxis')
                 .attr("x", 0)//x轴上从哪个地方开始画
-                .attr("y", function(d){return yScale(d.name);})//y轴从哪个地方开始画
+                .attr("y", function (d) { return yScale(d.name); })//y轴从哪个地方开始画
                 .attr("width", d => {
                     return xScale(d.value);
                 })//画的柱的高度
@@ -180,15 +187,15 @@
                 .attr("class", "changeAxis")
                 .attr('transform', 'translate(' + (margin.left) + ',' + (margin.top + height) + ')')
                 .call(xAxis)
-                .call(function(g){
-                    g.selectAll(".tick text").attr("font-size","15px")
+                .call(function (g) {
+                    g.selectAll(".tick text").attr("font-size", "15px")
                 });
             gY = svg.append('g')
                 .attr("class", "changeAxis")
                 .attr('transform', 'translate(' + (margin.left) + ',' + margin.top + ')')
                 .call(yAxis)
-                .call(function(g){
-                    g.selectAll(".tick text").attr("font-size","15px")
+                .call(function (g) {
+                    g.selectAll(".tick text").attr("font-size", "15px")
                 });
         }
 

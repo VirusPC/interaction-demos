@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Force Directed Tree</title>
+</head>
+
+<body>
+  <h1>Force Directed Tree</h1>
+  <a href="https://observablehq.com/@leeho/force-directed-graph">source</a>
+  <br>
+  <br>
+  <br>
+  <div class="container" id="chartArea">
+    <div class="section">
+      <div class="chartArea" id="target">
+        <div class="legendPerson">
+          <div class="value01"><span class="marker"></span>고빈도 인물</div>
+          <div class="value02"><span class="marker"></span>떠오르는 인물</div>
+          <div class="value03"><span class="marker"></span>신규 인물</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <sicript src="https://d3js.org/d3.v3.min.js"></sicript>
+
+  <script >
+    function tree_level(t) {
+      if (t.children.length == 0) return 1;
+      return 1 + Math.max.apply(null, t.children.map(function (d) { return tree_level(d); }));
+    }
+    function build_graph(data, max_level, width, height) {
+      const graph = {
+        nodes: [],
+        links: []
+      };
+
+      const n = data.children.length;
+      const delta_rad = n ? Math.PI * 2 / n : 0;
+      const r = max_level ? Math.min(width, height) * 0.5 / (max_level - 1) : 0;
+      let rad = Math.PI * 3 / 2;
+
+      function add_node(parent_id, level, t) {
+        const node_id = graph.nodes.length;
+        if (level == 0) {
+          graph.nodes.push({
+            svg: t.svg,
+            fixed: true,
+            x: width / 2,
+            y: height / 2
+          });
+        }
+        else if (level == 1) {
+          graph.nodes.push({
+            svg: t.svg,
+            fixed: true,
+            x: width / 2 + Math.cos(rad) * r,
+            y: height / 2 + Math.sin(rad) * r
+          });
+          rad += delta_rad;
+        }
+        else {
+          graph.nodes.push({
+            svg: t.svg,
+            x: level * (graph.nodes[parent_id].x - width / 2) / (level - 1) + width / 2,
+            y: level * (graph.nodes[parent_id].y - height / 2) / (level - 1) + height / 2
+          });
+        }
+
+        if (parent_id >= 0) {
+          graph.links.push({
+            source: graph.nodes[parent_id],
+            target: graph.nodes[node_id]
+          });
+        }
+
+        t.children.forEach(function (d) {
+          add_node(node_id, level + 1, d);
+        });
+      }
+
+      add_node(-1, 0, data);
+
+      return graph;
+    }
+
+
+    d3.json("./tree@9.json").then((data) => {
+      const width = 766;
+      const height = 700;
+
+      const chartArea = d3.select("#chartArea")
+      //const svg = d3.select(html`<svg style="width: ${width}px; height: ${height}px; border:1px solid black;"></svg>`);  
+
+      const svg = chartArea.selectAll("#target").append("svg")
+        .style("width", width)
+        .style("height", height);
+
+      const max_level = tree_level(data);
+      const max_distance = Math.min(width, height);
+      const link_distance = (max_level > 1) ? max_distance * 0.2 / max_level : 0;
+      const graph = build_graph(data, max_level, width, height);
+      const nodes = graph.nodes;
+      const links = graph.links;
+
+      var force = d3.layout.force()
+        .size([width, height])
+        .nodes(nodes).links(links)
+        .linkDistance(link_distance)
+        .linkStrength(0.95)
+        .friction(0.95)
+        .charge(-1000)
+        .gravity(0.1)
+        .on("tick", n => {
+          link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+          node.attr("transform", function (d) { return `translate(${d.x}, ${d.y})`; })
+        });
+
+      var link = svg.append("g")
+        .attr("stroke", "#999")
+        .attr("stroke-opacity", 0.6)
+        .selectAll(".link").data(links).enter().append("line")
+        .attr("class", "link");
+
+      var node = svg.append("g")
+        .selectAll(".node").data(nodes).enter().append("g")
+        .html(function (d) { return d.svg; });
+
+      node.call(force.drag);
+
+      force.start();
+    });
+
+  </script>
+  <style>
+    .container {
+      width: 847px;
+      margin: 30px auto;
+      -webkit-box-shadow: 10px 10px 28px -2px rgba(0, 0, 0, 0.41);
+      -moz-box-shadow: 10px 10px 28px -2px rgba(0, 0, 0, 0.41);
+      box-shadow: 10px 10px 28px -2px rgba(0, 0, 0, 0.41);
+      background-color: #fff;
+      position: relative;
+      font-family: "NanumBarunGothic", 나눔바른고딕, "Malgun Gothic", 맑은 고딕, Apple Gothic, Dotum, tahoma, sans-serif;
+    }
+
+    .section {
+      padding: 25px 40px;
+      clear: both;
+    }
+
+    .container .chartArea {
+      height: auto;
+      min-height: 370px;
+      border: 1px solid #aaa;
+      margin: 10px 0 10px 0;
+      padding: 10px 10px;
+      width: 766px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .legendPerson {
+      position: absolute;
+      font-size: 12px;
+      vertical-align: middle;
+      left: 20px;
+      top: 20px;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAA3CAIAAACzX+zjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGAGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMTEtMTlUMjE6MzI6MTUtMDg6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMTktMTEtMTlUMjE6MzI6MTUtMDg6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTExLTE5VDIxOjMyOjE1LTA4OjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUyYmMxZjQxLTZiOTAtNGM3OS1hMTVmLTc3M2Q0NTRkMTI4MyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjVlMDE1NDA5LTQwMDUtZWQ0MC04YTcwLWI4YWMxYWIwMzM1ZiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjQ1NjAzZjI3LTI3MmQtNDRlZi04MWIzLWRlYjEzZjcwZmYzNyIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NDU2MDNmMjctMjcyZC00NGVmLTgxYjMtZGViMTNmNzBmZjM3IiBzdEV2dDp3aGVuPSIyMDE5LTExLTE5VDIxOjMyOjE1LTA4OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NTJiYzFmNDEtNmI5MC00Yzc5LWExNWYtNzczZDQ1NGQxMjgzIiBzdEV2dDp3aGVuPSIyMDE5LTExLTE5VDIxOjMyOjE1LTA4OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4GHjGcAAACG0lEQVRIiWP8//8/A27wqq7w59WLEDYTHnVogAWN/+/7N4Z//xgYGBiYmJg4ufApfVmY/Of1SwYGBhZRcckZy5GlSHAAKW79MG8qlCUpzeMZgE/p561rISx2bX38SmnjVlK8xRcWD2WJiTMwMPD4hPz7+oWBgYGJm4eBgYHb0Z1d2wCigBF/GiDTAaNKKVP699mZv8/OYFH7HxX8fnjo03zbT/Nsfz88hCaFErF/Hh76vq+a4d8fBgYGBiYWTqdWFnk7uCxC6e+7O38cbGL4/w9hIyMTh30dq7I7itLft7f9ONyKog6u2raKVdUbqvT39XU/jnXj8TuHVSmrZhDj34+Pfl1YyMDwn4GB4c+D/f9/f0eYyMrJouAIYbIZxKN46+vKwH9fXsC5TDwS3OHrEVw89qKBAVeKUhIyCSgysPEiuFwiyLKjOXbAlbIwMDC8/Pzv5ee/DAwMApxMcoLMcLkH7/5++vGPgYFBnJdZnJeJhYGBYdeNH0vOfGdgYGBjZuwN5FMThcb2glPfjt//xcDAEGPCGWvKheKAX3//N+74/P47Rg7D6tY3X/617PzyB5tiLN668vz39CNfsXsLE2y5+kNZhBlNEMVUY1lWFZifph7++uDtX5xK2VgY6915+TmZGBgY/vxjeP4Jt1IGBgYxXqYaNx5mbDGDRUxPijXDmpsopQwMDH46HO4a7EQpZWBgyLPn0RRHCR8AmZHPrA2MPK8AAAAASUVORK5CYII=') no-repeat 4px 9px;
+    }
+
+    .legendPerson .marker {
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      border-radius: 10px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .legendPerson .value01,
+    .legendPerson .value02,
+    .legendPerson .value03 {
+      margin-top: 8px;
+      margin-left: 5px;
+      padding-left: 5px;
+      line-height: initial;
+    }
+
+    .centerPerson {
+      font-family: 'NanumBarunGothicBold';
+      font-size: 17px;
+      letter-spacing: 1;
+    }
+
+    .centerPerson path {
+      fill: #586577;
+    }
+
+    .centerPerson text {
+      fill: #FFFFFF;
+    }
+
+    .centerPerson image {
+      overflow: visible;
+    }
+
+    .relativePerson {
+      font-family: 'NanumBarunGothicBold';
+      font-size: 12px;
+      letter-spacing: 1;
+    }
+
+    .relativePerson path {
+      fill: #EFF3F9;
+      stroke: #DFE3E8;
+      stroke-width: 0.5;
+      stroke-miterlimit: 10;
+    }
+
+    .relativePerson text {
+      fill: #31363F;
+    }
+
+    .relativePerson image {
+      overflow: visible;
+    }
+
+    .relativePerson g.value01 {
+      fill: #F44336;
+    }
+
+    .relativePerson polygon.value02 {
+      fill: #FF9800;
+    }
+
+    .relativePerson path.value03 {
+      fill: #2196F3;
+    }
+
+    .otherPerson {
+      font-family: 'NanumBarunGothic';
+      font-size: 12px;
+      letter-spacing: 1;
+    }
+
+    .otherPerson path {
+      fill: #FFFFFF;
+      stroke: #DBDBDB;
+      stroke-width: 0.5;
+      stroke-miterlimit: 10;
+    }
+
+    .otherPerson text {
+      fill: #31363F;
+      text-anchor: middle;
+    }
+  </style>
+</body>
+
+</html>

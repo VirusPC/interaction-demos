@@ -1,13 +1,19 @@
 <html>
 
 <head>
-
+    <meta charset="utf-8">
+    <title>Scatter Plot Null Values</title>
 </head>
 
 <body>
-    
+    <h1>Scatter Plot Null Values</h1>
+
     <a href="https://vega.github.io/vega/examples/scatter-plot-null-values/">source</a>
-    <div style="display: inline-block; position: relative;  width: fit-content; height: fit-content; left:750px; top: 50px">
+    <br>
+    <br>
+    <br>
+    <div
+        style="display: inline-block; position: relative;  width: fit-content; height: fit-content; left:700px; top: 50px">
         <div>
             yField
             <select id="y-axis" onchange="changeY(this)">
@@ -54,8 +60,8 @@
 
         }
         margin = { left: 150, right: 150, top: 50, bottom: 90 };
-        width = 560;
-        height = 500;
+        width = 500;
+        height = 450;
         var svg = d3.select("svg").attr("id", "main_panel")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom);
