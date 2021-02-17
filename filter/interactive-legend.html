@@ -1,17 +1,22 @@
 <html>
 
 <head>
-
+    <meta charset="utf-8">
+    <title>Interactive Legend</title>
 </head>
 
 <body>
+    <h1>Interactive Legend</h1>
     <a href="https://vega.github.io/vega/examples/interactive-legend/">source</a>
+    <br>
+    <br>
+    <br>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script>
 
         margin = { left: 150, right: 150, top: 50, bottom: 90 };
-        width = 560;
-        height = 500;
+        width = 450;
+        height = 400;
         var svg = d3.select("body").append("svg").attr("id", "main_panel")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom);
@@ -166,7 +171,7 @@
                 .text("Miles_per_Gallon")
                 .attr('font-size', '1.2em')
                 .attr('y', 90)
-                .attr('x', -(margin.top+ height / 2))
+                .attr('x', -(margin.top + height / 2))
                 .attr('transform', 'rotate(-90)')
                 .attr('fill', 'black')
                 .attr("text-anchor", "middle")

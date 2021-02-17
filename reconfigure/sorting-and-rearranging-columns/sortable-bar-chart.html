@@ -72,7 +72,6 @@
           const orderString = selectElem.options[selectElem.options.selectedIndex].value;
           const order = translateOrder(orderString);
           x.domain(data.sort(order).map(d => d.name));
-          console.log(data.sort(order));
 
           const t = svg.transition()
             .duration(750);

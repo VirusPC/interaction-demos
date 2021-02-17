@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style type="text/css">
+  body {
+    width: 1024px;
+    margin-top: 0;
+    margin: auto;
+    font-family: "Lato", "PT Serif", serif;
+    color: #222222;
+    padding: 0;
+    font-weight: 300;
+    line-height: 33px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+</style>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="https://d3js.org/queue.v1.min.js"></script>
+<body>
+  <div id='map'></div>
+  <div>
+    <label for="nVel">
+      Emissions Budget (kg CO2,e per ton) = <span id="goal-value">150</span>
+      <input style="width: 200px;" type="range" min="0" max="150" id="goal" value="150" step='1'>
+    </label>
+  </div>
+  
+</body>
+<script type="text/javascript">
+  var margin = {top: 50, right: 30, bottom: 30, left: 40},
+    height = 500 - margin.top -  margin.bottom,
+    width = 960- margin.right - margin.left,
+    goal = 0.33;
+
+  var projection = d3.geo.albers()
+      .rotate([96, 0])
+      .center([-.6, 41])
+      .parallels([29.5, 45.5])
+      .scale(1070)
+      .translate([width / 2, height / 2])
+      .precision(.1);
+
+  var path = d3.geo.path()
+      .projection(projection);
+
+  var color = d3.scale.threshold()
+    .domain(d3.range(10).map(function(d){ return d*18}))
+    .range(['#a50026','#d73027','#f46d43','#fdae61','#fee08b','#d9ef8b','#a6d96a','#66bd63','#1a9850','#006837'].reverse());
+     
+  svg = d3.select("#map").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height+margin.bottom + margin.top)
+      .attr('class', 'well');
+
+  var g = svg.append("g")
+    
+  queue()
+      .defer(d3.json, "fs_chi_wood.json")
+      .await(ready);
+
+  function ready(error, counties){
+    svg.append("g")
+        .attr("class", "usa")
+      .selectAll("path")
+        .data(topojson.feature(counties, counties.objects.fs).features)
+      .enter().append("path")
+        .attr("fill", function(d){ return color(+d.properties.kg_ghg_per)})
+        .attr("d", path)
+  }
+
+  d3.select("#goal").on("input", function() {
+    goal = +this.value;
+    d3.select('#goal-value').text(goal);
+
+    svg.selectAll("svg path").each(function(d) { 
+        this.style.opacity = d.properties.kg_ghg_per < goal ? 1 : 0; 
+      });
+  });
+
+  d3.select(self.frameElement).style("height",  "580px");
+</script>
+</html>

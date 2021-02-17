@@ -1,0 +1,158 @@
+{
+	"svg": "<g class=\"centerPerson\"><path d=\"M38.9,40h-79.4c-21.2,0-38.3-17.2-38.3-38.3v0c0-21.2,17.2-38.3,38.3-38.3h79.4c21.2,0,38.3,17.2,38.3,38.3v0C77.2,22.8,60,40,38.9,40z\"/><g style=\"clip-path: circle(30px at 50% 50%);\"><rect x=\"-73\" y=\"-38\" width=\"66\" height=\"80\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-73\" y=\"-38\" width=\"66\" height=\"80\" xlink:href=\"https://img3.yna.co.kr/photo/yna/YH/2014/08/07/PYH2014080709430001300_P2.jpg\"></image></g><text dominant-baseline=\"central\">동물</text></g>",
+	"children": [
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"http://www.memozee.com/FILES/074/jinsuk.759.20120313%20Red-eyed%20Treefrog%20(Agalychnis%20callidryas)%20-%20%EB%B6%89%EC%9D%80%EB%88%88%EC%B2%AD%EA%B0%9C%EA%B5%AC%EB%A6%AC.jpg\"></image></g><g transform=\"translate(0, 8)\"><g class=\"value01\"><rect x=\"1.1\" y=\"6.1\" width=\"2.6\" height=\"3.6\"></rect><rect x=\"4.7\" y=\"3.6\" width=\"2.6\" height=\"6.1\"></rect><rect x=\"8.3\" y=\"1.4\" width=\"2.6\" height=\"8.2\"></rect></g><polygon class=\"value02\" points=\"10.5,5.6 6,1 1.5,5.6 4,5.6 4,10 8,10 8,5.6\" transform=\"translate(12, 0)\"></polygon><path class=\"value03\" d=\"M2.1,1.4h2.1l3.4,4.4V1.4h2.3v8.2h-2L4.3,5.1v4.5H2.1V1.4z\" transform=\"translate(24, 0)\"></path></g><text>양서류</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">개구리</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">도룡뇽</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">스콜레코모르푸스</text></g>",
+					"children": []
+				}				
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99E9E0345BC1F0FB3E\"></image></g><g transform=\"translate(12, 8)\"><g class=\"value01\"><rect x=\"1.1\" y=\"6.1\" width=\"2.6\" height=\"3.6\"></rect><rect x=\"4.7\" y=\"3.6\" width=\"2.6\" height=\"6.1\"></rect><rect x=\"8.3\" y=\"1.4\" width=\"2.6\" height=\"8.2\"></rect></g></g><text>포유류</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">고양이</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">너구리</text></g>",
+					"children": []
+				}				
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://cdn.pixabay.com/photo/2016/06/04/09/19/dragonfly-1435200_960_720.jpg\"></image></g><g transform=\"translate(12, 8)\"><path class=\"value03\" d=\"M2.1,1.4h2.1l3.4,4.4V1.4h2.3v8.2h-2L4.3,5.1v4.5H2.1V1.4z\"></path></g><text>곤충</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">잠자리</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">매미</text></g>",
+					"children": []
+				}				
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://cdn.pixabay.com/photo/2016/06/04/09/19/dragonfly-1435200_960_720.jpg\"></image></g><g transform=\"translate(12, 8)\"><path class=\"value03\" d=\"M2.1,1.4h2.1l3.4,4.4V1.4h2.3v8.2h-2L4.3,5.1v4.5H2.1V1.4z\"></path></g><text>곤충</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">모기</text></g>",
+					"children": []
+				}
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://cdn.pixabay.com/photo/2016/06/04/09/19/dragonfly-1435200_960_720.jpg\"></image></g><g transform=\"translate(12, 8)\"><path class=\"value03\" d=\"M2.1,1.4h2.1l3.4,4.4V1.4h2.3v8.2h-2L4.3,5.1v4.5H2.1V1.4z\"></path></g><text>곤충</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				}
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://cdn.pixabay.com/photo/2016/06/04/09/19/dragonfly-1435200_960_720.jpg\"></image></g><g transform=\"translate(12, 8)\"><path class=\"value03\" d=\"M2.1,1.4h2.1l3.4,4.4V1.4h2.3v8.2h-2L4.3,5.1v4.5H2.1V1.4z\"></path></g><text>곤충</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">나비</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">메뚜기</text></g>",
+					"children": []
+				}				
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://post-phinf.pstatic.net/20160728_246/1469667215892EUqbx_JPEG/KakaoTalk_20160728_095155133.jpg?type=w1200\"></image></g><text>조류</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">참새</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">제비</text></g>",
+					"children": []
+				}				
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlJ99zTMLYwIezP692YXjyI1VhzRvaBmiK7anCZNoM5aNW4IBB&s\"></image></g><g transform=\"translate(6, 8)\"><polygon class=\"value02\" points=\"10.5,5.6 6,1 1.5,5.6 4,5.6 4,10 8,10 8,5.6\"></polygon><path class=\"value03\" d=\"M2.1,1.4h2.1l3.4,4.4V1.4h2.3v8.2h-2L4.3,5.1v4.5H2.1V1.4z\" transform=\"translate(12, 0)\"></path></g><text>파충류</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">악어</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">도마뱀</text></g>",
+					"children": []
+				}				
+			]
+		},
+		{
+			"svg": "<g class=\"relativePerson\"><path d=\"M28,26h-57.4c-15.3,0-27.7-12.4-27.7-27.7v0c0-15.3,12.4-27.7,27.7-27.7h57.4c15.3,0,27.7,12.4,27.7,27.7v0C55.7,13.6,43.3,26,28,26z\"/><g style=\"clip-path: circle(22px at 50% 50%);\"><rect x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" style=\"background-color: #586577;\"/><image style=\"overflow:visible;\" x=\"-56\" y=\"-32\" width=\"52\" height=\"60\" xlink:href=\"https://pbs.twimg.com/profile_images/1022377280654327808/Cox9Th0D_400x400.jpg\"></image></g><g transform=\"translate(12, 8)\"><polygon class=\"value02\" points=\"10.5,5.6 6,1 1.5,5.6 4,5.6 4,10 8,10 8,5.6\"></polygon></g><text>어류</text></g>",
+			"children": [
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">잉어</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">강아지</text></g>",
+					"children": []
+				},
+				{
+					"svg": "<g class=\"otherPerson\"><path d=\"M19.5,17h-38c-9.6,0-17.5-7.9-17.5-17.5v0c0-9.6,7.9-17.5,17.5-17.5h38c9.6,0,17.5,7.9,17.5,17.5v0C37,9.1,29.1,17,19.5,17z\"/><text dominant-baseline=\"central\">붕어</text></g>",
+					"children": []
+				}				
+			]
+		}
+	]
+}
