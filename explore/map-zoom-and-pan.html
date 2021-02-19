@@ -18,7 +18,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
     <script>
-        var width = 860,
+        var width = 660,
             height = 400;
 
         var projection = d3.geoMercator()
@@ -35,12 +35,15 @@
 
         var g = svg.append("g");
 
-        // load and display the World
-        d3.json("https://vega.github.io/vega/data/world-110m.json").then(function (topology) {
+        // https://gw.alipayobjects.com/os/antvdemo/assets/data/world.geo.json
+        d3.json("./world.geo.json").then(function (data) {
+            console.log(data.features)
             g.selectAll("path")
-                .data(topojson.feature(topology, topology.objects.countries)
-                    .features)
-                .enter().append("path")
+                // .data(topojson.feature(topology, topology.objects.countries)
+                //     .features)
+                .data(data.features)
+                .enter()
+                .append("path")
                 .attr("d", path)
                 .attr("fill", "#e5e8d3")
                 .attr("stroke", "#bbb")
